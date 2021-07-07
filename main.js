@@ -5,8 +5,18 @@ window.addEventListener('scroll',function(){
 
 //navtogle
 const menutoogle = document.querySelector('.menutoogle input');
-const nav = document.querySelector('.nav .navigation');
-
+const nav = document.querySelector('.navbar .nav-link');
 menutoogle.addEventListener('click', function(){
     nav.classList.toggle('slide');
 });
+var docWidth = document.documentElement.offsetWidth;
+
+console.log('list:');
+[].forEach.call(
+  document.querySelectorAll('*'),
+  function(el) {
+    if (el.offsetWidth > docWidth) {
+      console.log(el);
+    }
+  }
+);
